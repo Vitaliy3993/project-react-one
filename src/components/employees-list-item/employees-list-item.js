@@ -2,40 +2,20 @@
  */
 import './employees-list-item.css';
 
-const EmployeesListItem = (props) => {
-    /* constructor(props) {
-        super(props);
-        this.state = {
-            increase: false,
-            like: false
-        }
-    } */
-
-    /* onLike = () => {
-        this.setState(({like}) => ({
-            like: !like
-        }))
-    }
-
-    onIncrease = () => {
-        this.setState(({increase}) => ({
-            increase: !increase
-        }))
-    } */
-    
-    const {name, salary, onDelete, onToggleProp, increase, rise} = props;
+const EmployeesListItem = (props) => { 
+    const {name, salary, onDelete, onToggleProp, increase, like} = props;
     
     let classNames = "list-group-item d-flex justify-content-between";
     if (increase) {
         classNames += ' increase';
     }
-    if (rise) {
+    if (like) {
         classNames += ' like';
     }
 
     return (
         <li className={classNames}>
-            <span className="list-group-item-label" onClick={onToggleProp} data-toggle="rise">{name}</span>
+            <span className="list-group-item-label" onClick={onToggleProp} data-toggle="like">{name}</span>
             <input type="text" className="list-group-item-input" defaultValue={salary + '$'}/>
             <div className='d-flex justify-content-center align-items-center'>
                 <button type="button"
