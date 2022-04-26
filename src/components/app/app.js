@@ -100,8 +100,8 @@ class App extends Component {
 
   render() {
     const {data, term, filter} = this.state;
-    const employees = this.state.data.length;
-    const increased = this.state.data.filter(item => item.increase).length;
+    const employees = this.state.data.length; // Кількість всіх працівників
+    const increased = this.state.data.filter(item => item.increase).length; // Кількість працівників з премією
     const visibleData = this.filterPost(this.searchEmp(data, term), filter); // Зараз це подвійна фільтрація (по пошуку і по критеріям) Приходить масив, відфільтрований від іншого компоненту
 
     return (
